@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <!-- Ce site a été réalisé dans le cadre d'une formation à l'Université de Limoges. -->
+        <meta charset="UTF-8" />
+        <title>Présentation de Julian Kaplan, entrepreneur web en reprise d’étude</title>
+        <link rel="icon" href="media/design/favicon.ico" />
+        <link rel="stylesheet" type="text/css" media="all" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"><!-- Ajout des Google Fonts. --> 
+   </head>
+    <body>
+        <header>
+            <nav>
+                <a href="./index.html"><img src="media/design/logo-blanc.png" alt="Logo J" class="logo-j"></a>
+                <ul>
+                    <li class="active-page"><a href="./index.html">Présentation personnelle</a></li>
+                    <li><a href="./travaux.html">Travaux</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <h1 id="haut">Présentation de Julian Kaplan, entrepreneur web en reprise d’étude</h1>
+            <p><em>Lorsque j’ai commencé à travailler à 16 ans, je savais que je retournerai un jour sur les bancs de l’école…</em></p>           
+            <figure>
+                <img src="media/images/figure_1.jpg"  class="main-image" alt="Photo illustrant la remise du Diplôme d'Honneur aux nouveaux bacheliers 2025" />
+                <figcaption>Remise du Diplôme d'Honneur aux nouveaux bacheliers 2025 par le préfet Yves Rousset, au Lycée d'Adultes de la ville de Paris, le 4 juillet 2025. (Archives personnelles)</figcaption>
+            </figure>
+            <h2>Et si on commençait par une petite blague ?</h2>
+                        <p>Avant de vous parler de moi, je vous propose de cliquer sur le bouton ci-dessous pour découvrir une blague en anglais !</p>
+                  <button id="getJoke">Raconte moi une blague en anglais</button>
+                  <div id="joke"></div>
+
+                  <script>
+                    document.getElementById("getJoke").addEventListener("click", function() {
+                      const url = "https://official-joke-api.appspot.com/random_joke";
+
+                      fetch(url)
+                        .then(response => response.json())
+                        .then(data => {
+                          document.getElementById("joke").innerHTML = `
+                            <p>${data.setup}</p>
+                            <p><strong>${data.punchline}</strong></p>
+                          `;
+                        })
+                        .catch(error => console.error("Error fetching the API:", error));
+                    });
+                  </script>
+            <h2>De Clermont Ferrand à Hong Kong</h2>
+            <p>Je m’appelle Julian Kaplan, j’ai 36 ans, je suis né à Clermont-Ferrand, et j’ai grandi dans un petit village en Essonne, à Boissy-sous-Saint-Yon. Comme beaucoup d’élèves, le passage au collège, dans un nouvel environnement ne s’est pas bien passé et dès 16 ans j’ai commencé à travailler en apprentissage dans un garage automobile.</p>
+            <p>À partir de 2011, j’ai commencé à avoir un important succès avec des sites internet que je développais le soir après le travail. Des centaines de milliers de personnes se sont mis à visiter chaque jour mes sites internet, c’était assez vertigineux.</p>
+            <p>Ce petit succès m’a permis de bâtir un projet professionnel plus cohérent avec mes aspirations, et j’ai par la suite rejoint la startup Eclypsia en Angleterre avec qui j’ai pu participer à la création de l’industrie du streaming et de l’esport.</p>
+            <figure>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/moCweHU_ZAA?si=kIfkNVffevEuKNb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <figcaption class="video">
+                    Documentaire sur l'histoire de la startup Eclypsia (Dexerto/Youtube)
+                </figcaption>
+            </figure>
+            <p>Autour des années 2018, de grands groupes ont commencé à investir dans notre industrie, ce qui l’a profondément déstabilisé et provoqué de nombreux départs. Ça a alors été pour moi la fin de mon aventure dans le gaming et les webtvs.
+                Une opportunité professionnelle est alors arrivée : partir en Asie, un continent que je n’avais alors jamais visité, pour monter une filiale de mon entreprise avec mes associés. Un peu réticent au début à l’idée de m’expatrier de nouveau, j’ai accepté de tenter l’aventure et c’est ainsi que je me suis retrouvé à 10000 kilomètres de chez moi pour lancer un nouveau projet.
+            </p>
+            
+            <figure>
+                <img src="media/images/figure_2.jpg" alt="Photographie illustrant la ville de Hong Kong" />
+                <figcaption>Photographie aérienne des bâtiments de la ville de Hong Kong (Simon Zhu/Licence Unsplash)</figcaption>
+            </figure>
+            <h2>Des parapluies, une révolution, et… une pandémie</h2>
+            <p>En 2019, alors que je m’installais à peine à Hong Kong, une révolution a démarré. Habitué aux mouvements sociaux en France, j’étais plutôt enthousiaste de suivre ces évènements qui se déroulaient juste en bas de chez moi. Mais après des mois de protestation, de nouvelles lois ont modifié les règles sur les visas des expatriés, ce qui a commencé à compromettre mon aventure hongkongaise. En 2020, le coronavirus sellait définitivement l’aventure : Je devais quitter Hong Kong et retourner à Paris.</p>
+            <p>De retour à Paris, les confinements successifs m’ont permis de faire le point sur ma vie, et j’ai commencé à ressentir le besoin d’apprendre de nouveau.</p>
+            <p>Sur <a href="https://openclassrooms.com/" target="_blank">OpenClassrooms</a>, j’ai alors suivi plusieurs formations et je me suis inscrit au Lycée d’Adultes de la ville de Paris pour tenter de passer le Baccalauréat que je n’avais jamais obtenu.</p>
+            <p>Les formations que j'ai terminé sur OpenClassrooms sont:</p>
+            <!-- Début du tableau -->
+            <table>
+                <tr>
+                    <th>Nom de la formation</th>
+                    <th>Date du début de la formation</th>
+                </tr>
+                <tr>
+                    <td>Créez votre site web avec HTML5 et CSS3</td>
+                    <td>20 mai 2020</td>
+                </tr>
+                <tr>
+                    <td>Comprendre le web</td>
+                    <td>21 mai 2020</td>
+                </tr>
+                <tr>
+                    <td>Découpez et intégrez une maquette</td>
+                    <td>24 mai 2020</td>
+                </tr>
+                <tr>
+                    <td>Concevez votre site avec PHP et MySQL</td>
+                    <td>24 mai 2020</td>
+                </tr>
+                <tr>
+                    <td>Introduction à jQuery</td>
+                    <td>19 juillet 2020</td>
+                </tr>
+                <tr>
+                    <td>Créez votre site professionnel avec WordPress</td>
+                    <td>24 juillet 2020</td>
+                </tr>
+                <tr>
+                    <td>Adoptez Visual Studio comme environnement de travail</td>
+                    <td>3 janvier 2021</td>
+                </tr>
+            </table>
+            <!-- Fin du tableau -->
+            <p>Après 3 années d’efforts et d’organisation militaire pour concilier ma vie de famille, ma vie professionnelle, et mes études de lycéen, j’ai obtenu le Bac Général en juillet 2025 avec une mention Bien.</p>
+            <p>Parallèlement à cette reprise d’études, j’ai commencé à retourner à Hong Kong de plus en plus régulièrement au fur et à mesure que la pandémie reculait, pour finalement me marier là-bas avec ma femme en Avril 2025 et m’y installer de nouveau de manière permanente quelques jours à peine après avoir obtenu le bac.</p>
+
+            <h2>Un petit Pokémon avant de passer à la suite ?</h2>
+            <p>Pour vous féliciter d'avoir tout lu, je vous propose d'attraper un Pokémon avant de poursuivre votre visite sur mon site !</p>
+
+
+
+                <div id="poke-container">
+                  <div id="poke-data">Clique pour voir un Pokémon !</div>
+                  <button id="getPokemon">Attraper un Pokémon</button>
+                </div>
+
+                <script>
+                  document.getElementById("getPokemon").addEventListener("click", function() {
+                    const randomId = Math.floor(Math.random() * 151) + 1;
+                    const url = "https://pokeapi.co/api/v2/pokemon/" + randomId;
+
+                    fetch(url)
+                      .then(response => response.json())
+                      .then(data => {
+                        const name = data.name;
+                        const img = data.sprites.front_default;
+                        
+                        document.getElementById("poke-data").innerHTML = `
+                          <h3>${name}</h3>
+                          <img src="${img}" alt="${name}">
+                        `;
+                      })
+                      .catch(error => console.error("Erreur :", error));
+                  });
+                </script>
+
+        </article>
+        
+        <section>
+            <br>
+            <p><a href="#haut">Vers le haut de page</a></p>
+        </section>
+        
+        <footer>
+            <p>Site web inspiré d'articles déjà rédigés pendant l'UE L102 et publiés sur <a href="https://juliankaplan.wixsite.com/mon-site" target="_blank">un blog Wix</a>.<br>
+                Pour me contacter : <a href="mailto:julian.LoremIpsum@etu.unilim.fr?subject=J'ai visité votre site internet">julian.LoremIpsum@etu.unilim.fr</a>
+            </p>
+        </footer>
+    </body>
+</html>
