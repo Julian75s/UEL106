@@ -1,0 +1,285 @@
+/* ========================================= */
+/* 1. RÉINITIALISATION GLOBALE               */
+/* ========================================= */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Applique la police à tout le corps du site par défaut */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px; /* Taille de base pour tout le corps du texte */
+}
+
+
+/* ========================================= */
+/* 2. HEADER et NAVIGATION (Sticky)          */
+/* ========================================= */
+
+header {
+    position: sticky; /* Permet au menu header de rester affiché même en scrollant */
+    top: 0;
+    z-index: 1000;
+}
+
+nav { 
+    background-color: #383d6c;
+    height: 100px;
+    display: flex;  /* Activer Flexbox pour centrer verticalement le contenu */
+    align-items: center; /* Centre le contenu verticalement à l'intérieur de la <nav> */
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: 700; 
+    color: white;
+    padding: 0 40px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+}
+
+nav ul {
+    list-style: none; /* Cache les puces/points de la liste */
+    margin: 0;
+    padding: 40px; 
+    display: flex; /* Active le mode Flexbox sur la liste */
+    flex-direction: row; /* Affiche les éléments en ligne */
+    gap: 20px; /* Ajoute un espace entre les liens */
+}
+
+nav ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: white; 
+}
+
+/* Style de la page active en dorée */
+nav ul li.active-page a {
+    color: #E7DFD0;
+}
+
+/* Effet au survol */
+nav ul li a:hover {
+    color: #E7DFD0; /* Couleur dorée au survol */
+}
+
+/* Logo J */
+.logo-j {
+    height: 60px; /* Définit la hauteur à 60 pixels */
+    width: auto;   /* La largeur s'adapte pour ne pas déformer l'image */
+}
+
+/* ========================================= */
+/* 3. CONTENU PRINCIPAL (ARTICLE)            */
+/* ========================================= */
+
+article {
+    max-width: 900px;     /* Limite la largeur de l'article */
+    /* Centre l'article horizontalement sur la page */
+    margin-left: auto;
+    margin-right: auto;
+    /* Marge intérieure : Crée un gros espace entre le bord du site et le texte. */
+    padding: 40px; 
+}
+
+/* Titres */
+article h1, article h2 {
+    color: #383d6c; 
+    margin-top: 1.5em; /* Ajoute un espace au-dessus des titres pour la séparation */
+    margin-bottom: 0.5em;
+    font-weight: 700; /* Assure que les titres sont bien en gras */
+}
+
+article h1 {
+    font-size: 2.5em;
+    scroll-margin-top: 130px; /* permet d'afficher le titre proprement quand on clique sur "vers le haut de la page" */
+}
+
+/* Paragraphes */
+article p {
+    text-align: justify; /* Justifie le texte */
+    line-height: 1.6; /* Améliore la lisibilité en augmentant l'espace entre les lignes */
+}
+
+/* Liens dans l'article */
+article a {
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    font-weight: 700;      /* Met le texte en gras */
+    color: #383d6c;        /* Couleur violette issue de la même charge graphique que mon site */
+}
+
+article a:hover {
+    color: #E7DFD0; /* Effet de survol doré */
+}
+
+figure {
+    /* Supprime les marges par défaut que les navigateurs ajoutent aux balises <figure> */
+    margin: 0 auto; /* Permet le centrage par défaut pour toutes les figures */
+    /* display: block; est par défaut pour figure */
+    font-size: 13px; 
+    font-style: italic;
+    color: #666; /* Rend le texte de légende un peu plus discret */
+}
+
+/* Limiter la taille des figures qui ne sont PAS la figure principale (y compris vidéos/iframes) */
+figure:not(:has(.main-image)) {
+    max-width: 700px; 
+    margin: 0 auto 20px auto; /* Centrage et ajout d'un espace sous les figures régulières */
+}
+
+figure:has(img.main-image) {
+    margin: 0; /* Supprime les marges par défaut que les navigateurs ajoutent aux balises <figure> */
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+video, iframe {
+
+    width: 100%; /* S'assurer qu'ils prennent toute la largeur du parent (<figure> limité à 700px) */
+    margin: 0 auto; 
+    display: block;     
+    height: auto;  
+    aspect-ratio: 16 / 9;
+}
+
+/* ----------------------------------------- */
+/* 3.1. Tableau dans l'article               */
+/* ----------------------------------------- */
+
+article table {
+    width: 100%;
+    border-collapse: collapse; /* permet d'avoir une belle bordure */
+    margin: 20px 0;
+    
+    /* Bordure épaisse et violette */
+    border: 3px solid #383d6c; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+}
+
+article th, article td {
+    padding: 12px 15px;
+    border: 1px solid #c2c9d4; /* Bordures internes fines */
+    text-align: left;
+}
+
+article th {
+    background-color: #383d6c; /* Fond violet pour l'en-tête */
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Ligne alternée (une ligne sur deux) pour la lisibilité */
+article tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+
+/* ----------------------------------------- */
+/* 3.2. Liste Ordonnée (OL) dans l'article   */
+/* ----------------------------------------- */
+
+article ol {
+    list-style-position: inside; /* Met le numéro à l'intérieur du bloc pour le centrage */
+    margin: 20px 0; 
+    padding: 0; /* Supprime le padding gauche par défaut de l'OL */
+    
+    /* Bordure épaisse et violette pour l'encadrement général (comme le tableau) */
+    border: 3px solid #383d6c; 
+    border-radius: 5px; /* Légers bords arrondis */
+    overflow: hidden; /* Assure que les styles enfants restent dans la bordure principale */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+article ol li {
+    padding: 12px 15px; /* ajuste l'espace intérieur */
+    font-size: 1em;
+    
+    /* Ligne de séparation interne fine */
+    border-bottom: 1px solid #c2c9d4; 
+}
+
+/* Enlève la bordure du dernier élément */
+article ol li:last-child {
+    border-bottom: none; 
+}
+
+/* Fond alterné pour la lisibilité */
+article ol li:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Style du numéro de liste */
+article ol li::marker {
+    color: #383d6c; /* Donne la couleur violette au numéro de la liste */
+    font-weight: 700;
+}
+
+
+/* ========================================= */
+/* 4. SECTION (Vers le haut de page)         */
+/* ========================================= */
+
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-right: -20px;
+    text-align: right; 
+    padding: 10px 40px 0 40px; 
+
+    position: sticky;
+    bottom: 20px; /* Le colle à 20px du bas de l'écran */
+    z-index: 999; /* Un z-index légèrement inférieur au header (1000) mais au-dessus du reste */
+}
+
+
+/* Style du lien spécifique [href="#haut"] */
+section p a[href="#haut"] {
+    display: inline-block; 
+    
+    /* Style du "bouton" */
+    background-color: #E7DFD0; /* Fond doré */
+    color: #383d6c; /* Texte violet */
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 5px; /* Bords arrondis */
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+}
+
+section p a[href="#haut"]:hover {
+    background-color: #d1c8bb; /* Assombrir légèrement au survol */
+}
+
+
+/* ========================================= */
+/* 5. FOOTER                                 */
+/* ========================================= */
+
+footer { 
+    background-color: #383d6c;
+    display: flex;  /* Activer Flexbox pour centrer verticalement le contenu */
+    align-items: center; /* Centre le contenu verticalement */
+    font-size: 1.1em;
+    color: white;
+    padding: 40px; 
+}
+
+footer p {
+    list-style: none; /* Cache les puces/points de la liste */
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #E7DFD0; 
+}
+
+footer a:hover {
+    color: white; /* Couleur blanche au survol */
+}
